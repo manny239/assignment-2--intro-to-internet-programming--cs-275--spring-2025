@@ -1,4 +1,5 @@
 {
+  "extends": "stylelint-config-standard",
   "rules": {
     "color-no-invalid-hex": [true, {
       "message": "You’ve entered an invalid HEX color."

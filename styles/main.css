@@ -1,35 +1,126 @@
 /* -----------------------------------------------------------------------------
-// This file includes deliberate errors in order for you to verify that
-// Stylelint and EditorConfig are working properly. If both tools are, indeed,
-// working correctly, then you’d see various errors in your editor about
-// indentation and violations of CSS syntax. When you save this file, your
-// editor should strip all excess newlines and whitespace characters from the
-// file. If both of these events occur, then Stylelint and EditorConfig are
-// working correctly.
-//
-// DON’T PROCEED UNTIL YOU’RE SURE STYLELINT AND EDITORCONFIG ARE WORKING RIGHT
-// -------------------------------------------------------------------------- */
-abcdef {
-     color: cs275
+This file includes deliberate errors in order for you to verify that
+Stylelint and EditorConfig are working properly. If both tools are, indeed,
+working correctly, then you’d see various errors in your editor about
+indentation and violations of CSS syntax. When you save this file, your
+editor should strip all excess newlines and whitespace characters from the
+file. If both of these events occur, then Stylelint and EditorConfig are
+working correctly.
+
+DON’T PROCEED UNTIL YOU’RE SURE STYLELINT AND EDITORCONFIG ARE WORKING RIGHT
+--------------------------------------------------------------------------- */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.4;
+  overflow: hidden;
 }
 
+h1 {
+  font-size: 2rem;
+  line-height: 1.1875;
+  font-weight: 600;
+  text-align: center;
+  margin: 1rem 0;
+}
 
+/* The carousel container */
+.carousel {
+  display: flex;
+  width: 640px;
+  margin: 2rem auto;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative; /* allows absolute positioning of child elements */
+}
 
+/* Positioning the .carousel-navigation absolutely
+so the left arrow is on the left edge, right arrow on the right edge */
+.carousel-navigation {
+  position: absolute;
+  top: 50%;          /* halfway down the .carousel */
+  left: 0;           /* span the full width of .carousel */
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* left arrow at left, right arrow at right */
+  transform: translateY(-300%);    /* vertically centering both of them */
+  pointer-events: none;           /* optional: lets clicks pass through except on links */
+}
 
+/* Style each arrow link (<a>) */
+.carousel-navigation a {
+  pointer-events: auto;  /* re-enable clicks on the <a> elements */
+  color: #fff;
+  border: none;
+  font-size: 0; /* hides text if any, since we have <img> inside */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 -2rem;
+  text-decoration: none; /* remove underline */
+}
 
+.carousel-navigation a:hover {
+  background-color: #555;
+}
 
+/* Existing #prev, #next rules (not currently used HTML) */
+#prev,
+#next {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+#prev:hover,
+#next:hover {
+  background-color: #555;
+}
 
+/* The container for the slides in index.html */
+#album-container {
+  width: 640px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
+/* Each slide within #album-container or .carousel-slides */
+.slide {
+  width: 640px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-align: center;
+}
 
+/* Image styling inside a slide */
+.slide img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
 
-
-
-
-
-
-
-
-
-
-
+/* The review paragraph styling */
+.review {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
