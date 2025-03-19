@@ -72,7 +72,7 @@ so the left arrow is on the left edge, right arrow on the right edge */
   background-color: #555;
 }
 
-/* Existing #prev, #next rules (not currently used HTML) */
+/* Existing #prev, #next rules */
 #prev,
 #next {
   background-color: #333;
